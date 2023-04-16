@@ -7,11 +7,6 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native'
-import SvgUri from 'react-native-svg-uri'
-import google from './assets/google.svg'
-import facebook from './assets/facebook-svgrepo-com.svg'
-import apple from './assets/apple-173-svgrepo-com.svg'
-import male from './assets/envelope-svgrepo-com.svg'
 
 import AppLoading from 'expo-app-loading'
 import * as Font from 'expo-font'
@@ -46,21 +41,39 @@ export default function App() {
           <View style={styles.countSetUp}>
             <Text style={styles.textLogIn}>Masz już konto?</Text>
             <TouchableOpacity style={styles.buttonSetUp}>
-              <SvgUri
-                width="100%"
-                height="100%"
-                source={require('./assets/google.svg')}
-              />
-
+              <View style={styles.countSetUpImage}>
+                <ImageBackground
+                  style={styles.setUpImage}
+                  source={require('./assets/google.png')}
+                />
+              </View>
               <Text style={styles.buttonSetUpText}>Użyj konta Google</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.buttonSetUp}>
+              <View style={styles.countSetUpImage}>
+                <ImageBackground
+                  style={styles.setUpImage}
+                  source={require('./assets/facebook.png')}
+                />
+              </View>
               <Text style={styles.buttonSetUpText}>Użyj konta Facebook</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.buttonSetUp}>
+              <View style={styles.countSetUpImage}>
+                <ImageBackground
+                  style={styles.setUpImage}
+                  source={require('./assets/apple.png')}
+                />
+              </View>
               <Text style={styles.buttonSetUpText}>Użyj konta Apple</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.buttonSetUp}>
+              <View style={styles.countSetUpImage}>
+                <ImageBackground
+                  style={styles.setUpImage}
+                  source={require('./assets/email.png')}
+                />
+              </View>
               <Text style={styles.buttonSetUpText}>
                 Zarejestruj się E-mailem
               </Text>
@@ -161,5 +174,22 @@ const styles = StyleSheet.create({
     color: '#EDEDED',
     fontSize: 14,
     fontFamily: 'aeonik-reg',
+  },
+  countSetUpImage: {
+    position: 'absolute',
+    height: 30,
+    width: 30,
+    left: 10,
+    top: 6,
+    borderRadius: 50,
+    backgroundColor: '#fff',
+    padding: 6,
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  setUpImage: {
+    height: 25,
+    width: 25,
   },
 })
